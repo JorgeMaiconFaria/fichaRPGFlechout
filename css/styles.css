@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  background: repeating-linear-gradient(
+    to bottom,
+    #002f00,        /* Cor de fundo */
+    #000 12px       /* Cor da linha */
+  );
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: repeating-linear-gradient(
+    to bottom,
+    #002f00,        /* Cor de fundo */
+    #000 12px       /* Cor da linha */
+  )
+}
+
+h1 {
+  text-align: center;
+  color: #fff; /* Cor de destaque */
+}
+
+h2, h3 {
+  text-align: center;
+  color: #fff; /* Cor de destaque */
+}
+
+.section {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  width: 40%;
+  color: #5ab65a;
+}
+
+input {
+  text-align: center;
+  width: 33%; /* Ajuste para alinhar melhor com o rótulo */
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  border: 1px solid #ccc;
+  background-color: #b6ffad;
+  margin: 3px;
+}
+
+#nomeJogador, #nomePersonagem, .armaObservacao {
+  width: 70%;
+}
+
+#nivel {
+  width: 20%;
+}
+
+#armasNome {
+  width: 90%;
+}
+
+.bonus {
+  text-align: center;
+  width: 20%; /* Ajuste para alinhar melhor com o rótulo */
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  border: 1px solid #ccc;
+  background-color: #dbf3d8;
+  margin: 6px;
+}
+
+textarea {
+  background-color: #dbf3d8;
+}
+
+input[type="checkbox"] {
+  accent-color: green;
+}
+
+
+p {
+  color: #5ab65a;;
+  margin: 4px;
+  font-size: 16px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #005f00;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
