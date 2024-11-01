@@ -64,8 +64,25 @@ input {
   width: 70%;
 }
 
+#imgNivel{
+  width: 45%;
+  height: 60%;
+}
+
+#imgInventario{
+  width: 25%;
+  height: 25%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.itemInput{
+  width: 80%;
+}
+
 #nivel {
   width: 20%;
+  height: 20%;
 }
 
 #armasNome {
