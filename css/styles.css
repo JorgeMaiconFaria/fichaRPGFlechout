@@ -49,6 +49,17 @@ label {
   color: #5ab65a;
 }
 
+.skill {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+}
+
+.skillP {
+  font-size: 24px;
+  font-weight: bold;
+}
+
 input {
   text-align: center;
   width: 33%; /* Ajuste para alinhar melhor com o rótulo */
@@ -85,7 +96,7 @@ input {
   height: 20%;
 }
 
-#armasNome {
+.armasNome {
   width: 90%;
 }
 
@@ -96,7 +107,7 @@ input {
   border-radius: 4px;
   border: 1px solid #ccc;
   border: 1px solid #ccc;
-  background-color: #dbf3d8;
+  background-color: #b6ffad;
   margin: 6px;
 }
 
@@ -106,12 +117,17 @@ textarea {
 
 input[type="checkbox"] {
   accent-color: green;
+  width: 25%;
 }
 
+.skill {
+  object-fit: contain;
+  transform: scale(100%);
+}
 
 p {
-  color: #5ab65a;;
-  margin: 4px;
+  color: #5ab65a;
+  margin: 6px;
   font-size: 16px;
 }
 

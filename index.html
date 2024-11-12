@@ -10,6 +10,9 @@
 
 <body>
   <div class="container">
+
+    <!-- Primeira section da ficha-->
+
     <h1>Ficha de Persongem Flechout</h1>
     <br>
     <form id="rpgForm">
@@ -26,10 +29,12 @@
         <input type="number" id="nivel" min="1" max="30" required>
         <img id="imgNivel" src="img/vaultBoy.png">
       </div>
+
+<!-- Atributos -->
+
       <hr><br>
       <h2 id="h2Atributos" onclick="esconderElemento('divAtributos')">Atributos</h2>
-      <br>
-      <hr><br>
+      <br><hr><br>
       <div id="divAtributos">
         <div class="section">
           <label for="forca">Força:</label>
@@ -68,6 +73,9 @@
         </div>
         <hr><br>
       </div>
+
+<!-- Habilidades -->
+
       <h2 id="h2Habilidades" onclick="esconderElemento('divHabilidades')">Habilidades</h2>
       <br>
       <hr><br>
@@ -76,8 +84,8 @@
         <br>
         <div class="section">
           <label for="forca">Armas Corpo-a-Corpo</label>
-          <input type="number" min="1" max="100" id="armasGrandes" placeholder="Valor" required>
-          <input type="checkbox" class="bonus">
+          <input type="number" min="1" max="100" id="armasCaC" placeholder="Valor" required>
+          <input type="checkbox" class="bonus" id="armasCaCBonus">
         </div>
         <hr><br>
         <h3>Percepção</h3>
@@ -85,17 +93,17 @@
         <div class="section">
           <label for="forca">Explosivos:</label>
           <input type="number" min="0" max="100" id="explosivos" placeholder="Valor" required>
-          <input type="checkbox" class="bonus">
+          <input type="checkbox" class="bonus" id="explosivosBonus">
         </div>
         <div class="section">
           <label for="forca">Armas de Energia:</label>
           <input type="number" min="0" max="100" id="armasEnergia" placeholder="Valor" required>
-          <input type="checkbox" class="bonus">
+          <input type="checkbox" class="bonus" id="armasEnergiaBonus">>
         </div>
         <div class="section">
           <label for="forca">Lockpick:</label>
           <input type="number" min="0" max="100" id="lockpick" placeholder="Valor" required>
-          <input type="checkbox" class="bonus">
+          <input type="checkbox" class="bonus" id="lockpickBonus">>
         </div>
         <hr><br>
         <h3>Resistência</h3>
@@ -103,64 +111,66 @@
         <div class="section">
           <label for="forca">Armas<br>Grandes:</label>
           <input type="number" min="1" max="100" id="armasGrandes" placeholder="Valor" required>
-          <input type="checkbox" class="bonus">
+          <input type="checkbox" class="bonus" id="armasGrandesBonus">>
         </div>
         <div class="section">
           <label for="forca">Ataque Desarmado:</label>
           <input type="number" min="1" max="100" id="ataqueDesarmado" placeholder="Valor" required>
-          <input type="checkbox" class="bonus">
+          <input type="checkbox" class="bonus" id="ataqueDesarmadoBonus">>
         </div>
         <hr><br>
         <h3>Carisma</h3>
         <br>
         <div class="section">
           <label for="forca">Discurso:</label>
-          <input type="number" min="0" max="100" id="explosivos" placeholder="Valor" required>
-          <input type="checkbox" class="bonus">
+          <input type="number" min="0" max="100" id="discurso" placeholder="Valor" required>
+          <input type="checkbox" class="bonus" id="discursoBonus">>
         </div>
         <div class="section">
           <label for="forca">Barganha:</label>
-          <input type="number" min="0" max="100" id="armasEnergia" placeholder="Valor" required>
-          <input type="checkbox" class="bonus">
+          <input type="number" min="0" max="100" id="barganha" placeholder="Valor" required>
+          <input type="checkbox" class="bonus" id="barganhaBonus">>
         </div>
         <hr><br>
         <h3>Inteligência</h3>
         <br>
         <div class="section">
           <label for="forca">Medicina:</label>
-          <input type="number" min="0" max="100" id="explosivos" placeholder="Valor" required>
-          <input type="checkbox" class="bonus">
+          <input type="number" min="0" max="100" id="medicina" placeholder="Valor" required>
+          <input type="checkbox" class="bonus" id="medicinaBonus">>
         </div>
         <div class="section">
           <label for="forca">Reparar:</label>
-          <input type="number" min="0" max="100" id="armasEnergia" placeholder="Valor" required>
-          <input type="checkbox" class="bonus">
+          <input type="number" min="0" max="100" id="reparar" placeholder="Valor" required>
+          <input type="checkbox" class="bonus" id="repararBonus">>
         </div>
         <div class="section">
           <label for="forca">Ciência:</label>
-          <input type="number" min="0" max="100" id="lockpick" placeholder="Valor" required>
-          <input type="checkbox" class="bonus">
+          <input type="number" min="0" max="100" id="ciencia" placeholder="Valor" required>
+          <input type="checkbox" class="bonus" id="cienciaBonus">>
         </div>
         <hr><br>
         <h3>Agilidade</h3>
         <br>
         <div class="section">
           <label for="forca">Armas Pequenas:</label>
-          <input type="number" min="0" max="100" id="armasEnergia" placeholder="Valor" required>
-          <input type="checkbox" class="bonus">
+          <input type="number" min="0" max="100" id="armasPequenas" placeholder="Valor" required>
+          <input type="checkbox" class="bonus" id="armasPequenasBonus">
         </div>
         <div class="section">
           <label for="forca">Furtividade:</label>
-          <input type="number" min="0" max="100" id="lockpick" placeholder="Valor" required>
-          <input type="checkbox" class="bonus">
+          <input type="number" min="0" max="100" id="furtividade" placeholder="Valor" required>
+          <input type="checkbox" class="bonus" id="furtividadeBonus">
         </div>
         <hr><br>
       </div>
+
+<!-- Inventário -->
+
       <h2 id="h2Inventario" onclick="esconderElemento('divInventario')">Inventário</h2>
       <br><hr><br>
       <div id="divInventario">
         <div class="section">
-
           <img id="imgInventario" src="img/Fo3_Carry_Weight.png">
         </div>
         <div class="section">
@@ -172,30 +182,61 @@
           <label for="itensMinusculos">Itens Minúsculos:</label>
           <textarea id="itensMinusculos"></textarea>
         </div>
-        <br>
-        <hr><br>
+        <br><hr><br>
+
+        <!-- Armas -->
+
         <h3 id="h2Armas" onclick="esconderElemento('divArmas')">Armas</h3>
         <div id="divArmas">
-          <br>
-          <hr><br>
+          <br><hr><br>
           <div class="section">
-            <input type="checkbox" class="bonus">
-            <input type="text" id="armasNome" placeholder="Valor">
+            <input type="checkbox" class="bonus" id="equipArma1">
+            <input type="text" class="armasNome" id="nomeArma1" placeholder="Aqui">
           </div>
           <div class="section">
             <p>Dano:</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor" id="danoArma1">
             <p>Crit:</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor" id="critArma1">
             <p>PA:</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor" id="paArma1">
           </div>
           <div class="section">
             <p>Munição:</p>
             <p>Atual:</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor" id="municaoArma1">
             <p>Total:</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor" id="atualArma1">
+          </div>
+          <div class="section">
+            <p>Observação:</p>
+            <textarea class="armaObservacao" id="obsArma1"></textarea>
+          </div>
+          <div class="section">
+            <p>Quebrada:</p>
+            <input type="checkbox" id="quebradaArma1">
+            <p>Destruída:</p>
+            <input type="checkbox" id="destruidaArma1">
+          </div>
+          <hr><br>
+          <div class="section">
+            <input type="checkbox" class="bonus">
+            <input type="text" class="armasNome" placeholder="Valor">
+          </div>
+          <div class="section">
+            <p>Dano:</p>
+            <input type="number" class="bonus" placeholder="Valor">
+            <p>Crit:</p>
+            <input type="number" class="bonus" placeholder="Valor">
+            <p>PA:</p>
+            <input type="number" class="bonus" placeholder="Valor">
+          </div>
+          <div class="section">
+            <p>Munição:</p>
+            <p>Atual:</p>
+            <input type="number" class="bonus" placeholder="Valor">
+            <p>Total:</p>
+            <input type="number" class="bonus" placeholder="Valor">
           </div>
           <div class="section">
             <p>Observação:</p>
@@ -210,22 +251,22 @@
           <hr><br>
           <div class="section">
             <input type="checkbox" class="bonus">
-            <input type="text" id="armasNome" placeholder="Valor">
+            <input type="text" class="armasNome" placeholder="Valor">
           </div>
           <div class="section">
             <p>Dano:</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor">
             <p>Crit:</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor">
             <p>PA:</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor">
           </div>
           <div class="section">
             <p>Munição:</p>
             <p>Atual:</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor">
             <p>Total:</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor">
           </div>
           <div class="section">
             <p>Observação:</p>
@@ -240,22 +281,22 @@
           <hr><br>
           <div class="section">
             <input type="checkbox" class="bonus">
-            <input type="text" id="armasNome" placeholder="Valor">
+            <input type="text" class="armasNome" placeholder="Valor">
           </div>
           <div class="section">
             <p>Dano:</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor">
             <p>Crit:</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor">
             <p>PA:</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor">
           </div>
           <div class="section">
             <p>Munição:</p>
             <p>Atual:</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor">
             <p>Total:</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor">
           </div>
           <div class="section">
             <p>Observação:</p>
@@ -270,22 +311,22 @@
           <hr><br>
           <div class="section">
             <input type="checkbox" class="bonus">
-            <input type="text" id="armasNome" placeholder="Valor">
+            <input type="text" class="armasNome" placeholder="Valor">
           </div>
           <div class="section">
             <p>Dano:</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor">
             <p>Crit:</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor">
             <p>PA:</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor">
           </div>
           <div class="section">
             <p>Munição:</p>
             <p>Atual:</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor">
             <p>Total:</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor">
           </div>
           <div class="section">
             <p>Observação:</p>
@@ -300,22 +341,22 @@
           <hr><br>
           <div class="section">
             <input type="checkbox" class="bonus">
-            <input type="text" id="armasNome" placeholder="Valor">
+            <input type="text" class="armasNome" placeholder="Valor">
           </div>
           <div class="section">
             <p>Dano:</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor">
             <p>Crit:</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor">
             <p>PA:</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor">
           </div>
           <div class="section">
             <p>Munição:</p>
             <p>Atual:</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor">
             <p>Total:</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor">
           </div>
           <div class="section">
             <p>Observação:</p>
@@ -330,52 +371,22 @@
           <hr><br>
           <div class="section">
             <input type="checkbox" class="bonus">
-            <input type="text" id="armasNome" placeholder="Valor">
+            <input type="text" class="armasNome" placeholder="Valor">
           </div>
           <div class="section">
             <p>Dano:</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor">
             <p>Crit:</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor">
             <p>PA:</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor">
           </div>
           <div class="section">
             <p>Munição:</p>
             <p>Atual:</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor">
             <p>Total:</p>
-            <input type="number" id="bonus" placeholder="Valor">
-          </div>
-          <div class="section">
-            <p>Observação:</p>
-            <textarea class="armaObservacao"></textarea>
-          </div>
-          <div class="section">
-            <p>Quebrada:</p>
-            <input type="checkbox">
-            <p>Destruída:</p>
-            <input type="checkbox">
-          </div>
-          <hr><br>
-          <div class="section">
-            <input type="checkbox" class="bonus">
-            <input type="text" id="armasNome" placeholder="Valor">
-          </div>
-          <div class="section">
-            <p>Dano:</p>
-            <input type="number" id="bonus" placeholder="Valor">
-            <p>Crit:</p>
-            <input type="number" id="bonus" placeholder="Valor">
-            <p>PA:</p>
-            <input type="number" id="bonus" placeholder="Valor">
-          </div>
-          <div class="section">
-            <p>Munição:</p>
-            <p>Atual:</p>
-            <input type="number" id="bonus" placeholder="Valor">
-            <p>Total:</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor">
           </div>
           <div class="section">
             <p>Observação:</p>
@@ -394,13 +405,13 @@
         <div id="divArmadura">
           <div class="section">
             <input type="checkbox" class="bonus">
-            <input type="text" id="armasNome" placeholder="Valor">
+            <input type="text" class="armasNome" placeholder="Valor">
           </div>
           <div class="section">
             <p>Prot.: Rad:</p>
             <input type="text" id="protRad" placeholder="Valor">
             <p>Prot.: Dano</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor">
           </div>
           <div class="section">
             <p>Observação:</p>
@@ -415,13 +426,13 @@
           <hr><br>
           <div class="section">
             <input type="checkbox" class="bonus">
-            <input type="text" id="armasNome" placeholder="Valor">
+            <input type="text" class="armasNome" placeholder="Valor">
           </div>
           <div class="section">
             <p>Prot.: Rad:</p>
             <input type="text" id="protRad" placeholder="Valor">
             <p>Prot.: Dano</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor">
           </div>
           <div class="section">
             <p>Observação:</p>
@@ -436,13 +447,13 @@
           <hr><br>
           <div class="section">
             <input type="checkbox" class="bonus">
-            <input type="text" id="armasNome" placeholder="Valor">
+            <input type="text" class="armasNome" placeholder="Valor">
           </div>
           <div class="section">
             <p>Prot.: Rad:</p>
             <input type="text" id="protRad" placeholder="Valor">
             <p>Prot.: Dano</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor">
           </div>
           <div class="section">
             <p>Observação:</p>
@@ -456,10 +467,14 @@
           </div>
           <hr><br>
           <div class="section">
+            <input type="checkbox" class="bonus">
+            <input type="text" class="armasNome" placeholder="Valor">
+          </div>
+          <div class="section">
             <p>Prot.: Rad:</p>
             <input type="text" id="protRad" placeholder="Valor">
             <p>Prot.: Dano</p>
-            <input type="number" id="bonus" placeholder="Valor">
+            <input type="number" class="bonus" placeholder="Valor">
           </div>
           <div class="section">
             <p>Observação:</p>
@@ -478,110 +493,208 @@
           <br><hr><br>
           <div class="section">
             <p>Item 1:</p>
-            <input type="text" class="itemInput">
+            <input type="text" class="itemInput" id="item1">
           </div>
           <div class="section">
             <p>Item 2:</p>
-            <input type="text" class="itemInput">
+            <input type="text" class="itemInput" id="item2">
           </div>
           <div class="section">
             <p>Item 3:</p>
-            <input type="text" class="itemInput">
+            <input type="text" class="itemInput" id="item3">
           </div>
           <div class="section">
             <p>Item 4:</p>
-            <input type="text" class="itemInput">
+            <input type="text" class="itemInput" id="item4">
           </div>
           <div class="section">
             <p>Item 5:</p>
-            <input type="text" class="itemInput">
+            <input type="text" class="itemInput" id="item5">
           </div>
           <div class="section">
             <p>Item 6:</p>
-            <input type="text" class="itemInput">
+            <input type="text" class="itemInput" id="item6">
           </div>
           <div class="section">
             <p>Item 7:</p>
-            <input type="text" class="itemInput">
+            <input type="text" class="itemInput" id="item7">
           </div>
           <div class="section">
             <p>Item 8:</p>
-            <input type="text" class="itemInput">
+            <input type="text" class="itemInput" id="item8">
           </div>
           <div class="section">
             <p>Item 9:</p>
-            <input type="text" class="itemInput">
+            <input type="text" class="itemInput" id="item9">
           </div>
           <div class="section">
             <p>Item 10:</p>
-            <input type="text" class="itemInput">
+            <input type="text" class="itemInput" id="item10">
           </div>
           <div class="section">
             <p>Item 11:</p>
-            <input type="text" class="itemInput">
+            <input type="text" class="itemInput" id="item11"> 
           </div>
           <div class="section">
             <p>Item 12:</p>
-            <input type="text" class="itemInput">
+            <input type="text" class="itemInput" id="item12">
           </div>
           <div class="section">
             <p>Item 13:</p>
-            <input type="text" class="itemInput">
+            <input type="text" class="itemInput" id="item13">
           </div>
           <div class="section">
             <p>Item 14:</p>
-            <input type="text" class="itemInput">
+            <input type="text" class="itemInput" id="item14">
           </div>
           <div class="section">
             <p>Item 15:</p>
-            <input type="text" class="itemInput">
+            <input type="text" class="itemInput" id="item15">
           </div>
           <div class="section">
             <p>Item 16:</p>
-            <input type="text" class="itemInput">
+            <input type="text" class="itemInput" id="item16">
           </div>
           <div class="section">
             <p>Item 17:</p>
-            <input type="text" class="itemInput">
+            <input type="text" class="itemInput" id="item17">
           </div>
           <div class="section">
             <p>Item 18:</p>
-            <input type="text" class="itemInput">
+            <input type="text" class="itemInput" id="item18">
           </div>
           <div class="section">
             <p>Item 19:</p>
-            <input type="text" class="itemInput">
+            <input type="text" class="itemInput" id="item19">
           </div>
           <div class="section">
             <p>Item 20:</p>
-            <input type="text" class="itemInput">
+            <input type="text" class="itemInput" id="item20">
           </div>
           <div class="section">
             <p>Item 21:</p>
-            <input type="text" class="itemInput">
+            <input type="text" class="itemInput" id="item21">
           </div>
           <div class="section">
             <p>Item 22:</p>
-            <input type="text" class="itemInput">
+            <input type="text" class="itemInput" id="item22">
           </div>
           <div class="section">
             <p>Item 23:</p>
-            <input type="text" class="itemInput">
+            <input type="text" class="itemInput" id="item23">
           </div>
           <div class="section">
             <p>Item 24:</p>
-            <input type="text" class="itemInput">
+            <input type="text" class="itemInput" id="item24">
           </div>
           <div class="section">
             <p>Item 25:</p>
-            <input type="text" class="itemInput">
+            <input type="text" class="itemInput" id="item25">
           </div>
         </div>
         <br><hr><br>
+
+        <!-- Munição -->
+
         <h3 id="h2Municao" onclick="esconderElemento('divMunicao')">Munição</h3>
-        <div id="divMunicao"></div>
+        <div id="divMunicao">
         <br><hr><br>
+        <div class="section">
+          <p>.308:</p>
+          <input type="text" class="itemInput" id=".308">
+          <p>.32:</p>
+          <input type="text" class="itemInput" id=".32">
+        </div>
+        <div class="section">
+          <p>.44 Magnum:</p>
+          <input type="text" class="itemInput" id=".44">
+          <p>10mm:</p>
+          <input type="text" class="itemInput" id="10mm">
+        </div>
+        <div class="section">
+          <p>Cal.12:</p>
+          <input type="text" class="itemInput" id="cal12">
+          <p>5.56mm:</p>
+          <input type="text" class="itemInput" id="5.56">
+        </div>
+        <div class="section">
+          <p>Cél. Microfusão:</p>
+          <input type="text" class="itemInput" id="microfusao">
+          <p>Míssil:</p>
+          <input type="text" class="itemInput" id="missel">
+        </div>
+        <div class="section">
+          <p>Comb. Flamer:</p>
+          <input type="text" class="itemInput" id="flamer">
+          <p>Carga Elétrons:</p>
+          <input type="text" class="itemInput" id="eletrons">
+        </div>
+        <div class="section">
+          <p>Cél. Energia:</p>
+          <input type="text" class="itemInput" id="energia">
+          <p>Mini Nuke:</p>
+          <input type="text" class="itemInput" id="nuke">
+        </div>
       </div>
+      <br><hr><br>
+    </div>
+
+<!-- Skills -->
+
+      <h2 id="h2Skill" onclick="esconderElemento('divSkill')">Skills</h2>
+      <br><hr><br>
+      <div id="divSkill">
+        <div class="section">
+          <p class="skillP">Lady Killer / Viúva Negra</p>
+          <input type="checkbox" class="skill">
+        </div>
+        <p>+2 dano contra inimigos do sexo oposto</p>
+        <p>Requisitos: Nível 2</p>
+        <hr><br>
+        <div class="section">
+          <p class="skillP">Garota(o) do papai</p>
+          <input type="checkbox" class="skill">
+        </div>
+        <p>+5 Ciência / +5 Medicina</p>
+        <p>Requisitos: Nível 2</p>
+        <hr><br>
+        <div class="section">
+          <p class="skillP">Parafuso da Arma</p>
+          <input type="checkbox" class="skill">
+        </div>
+        <p>5 Armas Pequenas / +5 Reparar</p>
+        <p>Requisitos: Nível 2<br>Int 4, Agi 4</p>
+        <hr><br>
+        <div class="section">
+          <p class="skillP">Jogador da Liga</p>
+          <input type="checkbox" class="skill">
+        </div>
+        <p>+5 Armas CaC / +5 Explosivos</p>
+        <p>Requisitos: Nível 2<br>For 4</p>
+        <hr><br>
+        <div class="section">
+          <p class="skillP">Ladrão</p>
+          <input type="checkbox" class="skill">
+        </div>
+        <p>+5 Lockpick / +5 Furtividade</p>
+        <p>Requisitos: Nível 2<br>Perc 4, Agi 4</p>
+        <hr><br>
+        <div class="section">
+          <p class="skillP">Aprendiz Rápido</p>
+          <input type="checkbox" class="skill">
+        </div>
+        <p>Ganha +1XP sempre que ganhar XP</p>
+        <p>Requisitos: Nível 2<br>Perc 4, Agi 4</p>
+        <hr><br>
+        <div class="section">
+          <p class="skillP">Treinamento Intenso</p>
+          <input type="checkbox" class="skill">
+        </div>
+        <p>+1 Ponto de Atributo</p>
+        <p>Requisitos: Nível 2</p>
+        <hr><br>
+      </div>
+    
       <button type="submit">Salvar Dados</button>
     </form>
   </div>
