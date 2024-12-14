@@ -18,67 +18,109 @@
     <form id="rpgForm">
       <div class="section">
         <label for="nomeJogador">Nome do Jogador:</label>
-        <input type="text" id="nomeJogador" placeholder="Insira o nome"  >
+        <input type="text" id="nomeJogador" placeholder="Insira o seu nome">
       </div>
       <div class="section">
         <label for="nomePersonagem">Personagem:</label>
-        <input type="text" id="nomePersonagem" placeholder="Insira o nome"  >
+        <input type="text" id="nomePersonagem" placeholder="Insira o nome do personagem">
       </div>
       <div class="section">
         <label for="nivel">Nível:</label>
-        <input type="number" id="nivel" min="1" max="30"  >
+        <input type="number" id="nivel" min="1" max="30" placeholder="Nível">
         <img id="imgNivel" src="img/vaultBoy.png">
+      </div>
+
+      <!-- Combate -->
+
+      <hr><br>
+      <h2 id="h2Combate" onclick="esconderElemento('divCombate')">Combate</h2>
+      <br><hr><br>
+      <div id="divCombate">
+        <div class="sectionCombate"><p>Pontos de Vida</p></div>
+        <div class="sectionCombate">
+            <input type="number" id="vidaAtual" placeholder="Atual">
+            <input type="number" id="vidaMaxima" placeholder="Max">
+        </div>
+        <br>
+        <div class="section">
+          <div class="colarADireita"><p>Radiação</p>
+            <input type="number" id="valorRadiacao"></div>
+          <div class="colarADireita"><p>PV Max. Radiação</p>
+            <input type="number" id="pvMaxRadiacao"></div>
+        </div>
+        <div class="section">
+          <p>Armadura</p>
+          <input type="number" id="armaduraTotal">
+        </div>
+        <div class="section">
+          <p>Veneno</p>
+          <input type="number" id="protVenenoTotal">
+          <p>Radiação</p>
+          <input type="number" id="protRadiacaoTotal">
+        </div>
+        <div class="section">
+          <p>Envenenado</p>
+          <input type="checkbox" id="envenenado">
+        </div>
+        <div class="section">
+          <p>Valor:</p>
+          <input type="number" id="valorVeneno">
+          <p>1h</p><input type="checkbox" id="veneno1h">
+          <p>8h</p><input type="checkbox" id="veneno8h">
+        </div>
+        <hr><br>
       </div>
 
 <!-- Atributos -->
 
-      <hr><br>
+
       <h2 id="h2Atributos" onclick="esconderElemento('divAtributos')">Atributos</h2>
       <br><hr><br>
       <div id="divAtributos">
         <div class="section">
           <label for="forca">Força:</label>
           <input type="number" min="1" max="10" id="forca" placeholder="Valor"  >
-          <input class="bonus" type="number" id="bonusForca">
+          <input class="bonus" type="number" min="1" max="10" id="bonusForca">
         </div>
         <div class="section">
           <label for="percepcao">Percepção:</label>
           <input type="number" min="1" max="10" id="percepcao" placeholder="Valor">
-          <input class="bonus" type="number" id="bonusPercepcao">
+          <input class="bonus" type="number" min="1" max="10" id="bonusPercepcao">
         </div>
         <div class="section">
           <label for="resistencia">Resistencia:</label>
           <input type="number" min="1" max="10" id="resistencia" placeholder="Valor"  >
-          <input class="bonus" type="number" id="bonusResistencia">
+          <input class="bonus" type="number" min="1" max="10" id="bonusResistencia">
         </div>
         <div class="section">
           <label for="carisma">Carisma:</label>
           <input type="number" min="1" max="10" id="carisma" placeholder="Valor">
-          <input class="bonus" type="number" id="bonusCarisma">
+          <input class="bonus" type="number" min="1" max="10" id="bonusCarisma">
         </div>
         <div class="section">
           <label for="inteligencia">Inteligência:</label>
           <input type="number" min="1" max="10" id="inteligencia" placeholder="Valor">
-          <input class="bonus" type="number" id="bonusInteligencia">
+          <input class="bonus" type="number" min="1" max="10" id="bonusInteligencia">
         </div>
         <div class="section">
           <label for="agilidade">Agilidade:</label>
           <input type="number" min="1" max="10" id="agilidade" placeholder="Valor"  >
-          <input class="bonus" type="number" id="bonusAgilidade">
+          <input class="bonus" type="number" min="1" max="10" id="bonusAgilidade">
         </div>
         <div class="section">
           <label for="sorte">Sorte:</label>
           <input type="number" min="1" max="10" id="sorte" placeholder="Valor">
-          <input class="bonus" type="number" id="bonusSorte">
+          <input class="bonus" type="number" min="1" max="10" id="bonusSorte">
         </div>
         <hr><br>
       </div>
 
+
+
 <!-- Habilidades -->
 
       <h2 id="h2Habilidades" onclick="esconderElemento('divHabilidades')">Habilidades</h2>
-      <br>
-      <hr><br>
+      <br><hr><br>
       <div id="divHabilidades">
         <h3>Força</h3>
         <br>
@@ -175,12 +217,12 @@
         </div>
         <div class="section">
           <label for="tampas">Tampas:</label>
-          <input type="number" id="tampas" placeholder="Valor">
+          <input type="number" min="0" max="1000000" id="tampas" placeholder="Valor">
         </div>
         <br>
         <div class="section">
           <label for="itensMinusculos">Itens Minúsculos:</label>
-          <textarea id="itensMinusculos"></textarea>
+          <textarea id="itensMinusculos" placeholder="Bugigangas"></textarea>
         </div>
         <br><hr><br>
 
@@ -198,18 +240,18 @@
           </div>
           <div class="section">
             <p>Dano:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="danoArma1">
+            <input type="number" min="0" max="999" class="bonus" placeholder="Valor" id="danoArma1">
             <p>Crit:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="critArma1">
+            <input type="number" min="0" max="999" class="bonus" placeholder="Valor" id="critArma1">
             <p>PA:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="paArma1">
+            <input type="number" min="0" max="99" class="bonus" placeholder="Valor" id="paArma1">
           </div>
           <div class="section">
             <p>Munição:</p>
             <p>Atual:</p>
-            <input type="number" class="bonus" placeholder="Atual" id="atualArma1">
+            <input type="number" min="0" max="9999" class="bonus" placeholder="Valor" id="atualArma1">
             <p>Total:</p>
-            <input type="number" class="bonus" placeholder="Total" id="municaoArma1">
+            <input type="number" min="0" max="9999" class="bonus" placeholder="Valor" id="municaoArma1">
           </div>
           <div class="section">
             <p>Observação:</p>
@@ -231,18 +273,18 @@
           </div>
           <div class="section">
             <p>Dano:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="danoArma2">
+            <input type="number" min="0" max="999" class="bonus" placeholder="Valor" id="danoArma2">
             <p>Crit:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="critArma2">
+            <input type="number" min="0" max="999" class="bonus" placeholder="Valor" id="critArma2">
             <p>PA:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="paArma2">
+            <input type="number" min="0" max="99" class="bonus" placeholder="Valor" id="paArma2">
           </div>
           <div class="section">
             <p>Munição:</p>
             <p>Atual:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="municaoArma2">
+            <input type="number" min="0" max="9999" class="bonus" placeholder="Valor" id="municaoArma2">
             <p>Total:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="atualArma2">
+            <input type="number" min="0" max="9999" class="bonus" placeholder="Valor" id="atualArma2">
           </div>
           <div class="section">
             <p>Observação:</p>
@@ -264,18 +306,18 @@
           </div>
           <div class="section">
             <p>Dano:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="danoArma3">
+            <input type="number" min="0" max="999" class="bonus" placeholder="Valor" id="danoArma3">
             <p>Crit:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="critArma3">
+            <input type="number" min="0" max="999" class="bonus" placeholder="Valor" id="critArma3">
             <p>PA:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="paArma3">
+            <input type="number" min="0" max="99" class="bonus" placeholder="Valor" id="paArma3">
           </div>
           <div class="section">
             <p>Munição:</p>
             <p>Atual:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="municaoArma3">
+            <input type="number" min="0" max="9999" class="bonus" placeholder="Valor" id="municaoArma3">
             <p>Total:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="atualArma3">
+            <input type="number" min="0" max="9999" class="bonus" placeholder="Valor" id="atualArma3">
           </div>
           <div class="section">
             <p>Observação:</p>
@@ -297,18 +339,18 @@
           </div>
           <div class="section">
             <p>Dano:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="danoArma4">
+            <input type="number" min="0" max="999" class="bonus" placeholder="Valor" id="danoArma4">
             <p>Crit:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="critArma4">
+            <input type="number" min="0" max="999" class="bonus" placeholder="Valor" id="critArma4">
             <p>PA:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="paArma4">
+            <input type="number" min="0" max="99" class="bonus" placeholder="Valor" id="paArma4">
           </div>
           <div class="section">
             <p>Munição:</p>
             <p>Atual:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="municaoArma4">
+            <input type="number" min="0" max="9999" class="bonus" placeholder="Valor" id="municaoArma4">
             <p>Total:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="atualArma4">
+            <input type="number" min="0" max="9999" class="bonus" placeholder="Valor" id="atualArma4">
           </div>
           <div class="section">
             <p>Observação:</p>
@@ -330,18 +372,18 @@
           </div>
           <div class="section">
             <p>Dano:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="danoArma5">
+            <input type="number" min="0" max="999" class="bonus" placeholder="Valor" id="danoArma5">
             <p>Crit:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="critArma5">
+            <input type="number" min="0" max="999" class="bonus" placeholder="Valor" id="critArma5">
             <p>PA:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="paArma5">
+            <input type="number" min="0" max="99" class="bonus" placeholder="Valor" id="paArma5">
           </div>
           <div class="section">
             <p>Munição:</p>
             <p>Atual:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="municaoArma5">
+            <input type="number" min="0" max="9999" class="bonus" placeholder="Valor" id="municaoArma5">
             <p>Total:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="atualArma5">
+            <input type="number" min="0" max="9999" class="bonus" placeholder="Valor" id="atualArma5">
           </div>
           <div class="section">
             <p>Observação:</p>
@@ -363,18 +405,18 @@
           </div>
           <div class="section">
             <p>Dano:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="danoArma6">"
+            <input type="number" min="0" max="999" class="bonus" placeholder="Valor" id="danoArma6">"
             <p>Crit:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="critArma6">
+            <input type="number" min="0" max="999" class="bonus" placeholder="Valor" id="critArma6">
             <p>PA:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="paArma6">
+            <input type="number" min="0" max="99" class="bonus" placeholder="Valor" id="paArma6">
           </div>
           <div class="section">
             <p>Munição:</p>
             <p>Atual:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="municaoArma6">
+            <input type="number" min="0" max="9999" class="bonus" placeholder="Valor" id="municaoArma6">
             <p>Total:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="atualArma6">
+            <input type="number" min="0" max="9999" class="bonus" placeholder="Valor" id="atualArma6">
           </div>
           <div class="section">
             <p>Observação:</p>
@@ -396,18 +438,18 @@
           </div>
           <div class="section">
             <p>Dano:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="danoArma7">
+            <input type="number" min="0" max="999" class="bonus" placeholder="Valor" id="danoArma7">
             <p>Crit:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="critArma7">
+            <input type="number" min="0" max="999" class="bonus" placeholder="Valor" id="critArma7">
             <p>PA:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="paArma7">
+            <input type="number" min="0" max="99" class="bonus" placeholder="Valor" id="paArma7">
           </div>
           <div class="section">
             <p>Munição:</p>
             <p>Atual:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="municaoArma7">
+            <input type="number" min="0" max="9999" class="bonus" placeholder="Valor" id="municaoArma7">
             <p>Total:</p>
-            <input type="number" class="bonus" placeholder="Valor" id="atualArma7">
+            <input type="number" min="0" max="9999" class="bonus" placeholder="Valor" id="atualArma7">
           </div>
           <div class="section">
             <p>Observação:</p>
@@ -436,9 +478,9 @@
           </div>
           <div class="section">
             <p>Prot.: Rad:</p>
-            <input type="text" id="protRadArmadura1" placeholder="Valor">
+            <input type="number" max="999" id="protRadArmadura1" placeholder="Valor">
             <p>Prot.: Dano</p>
-            <input type="number" class="bonus" id="protDanoArmadura1" placeholder="Valor">
+            <input type="number" max="999" id="protDanoArmadura1" placeholder="Valor">
           </div>
           <div class="section">
             <p>Observação:</p>
@@ -460,9 +502,9 @@
           </div>
           <div class="section">
             <p>Prot.: Rad:</p>
-            <input type="text" id="protRadArmadura2" placeholder="Valor">
+            <input type="number" max="999" id="protRadArmadura2" placeholder="Valor">
             <p>Prot.: Dano</p>
-            <input type="number" class="bonus" id="protDanoArmadura2" placeholder="Valor">
+            <input type="number" max="999" id="protDanoArmadura2" placeholder="Valor">
           </div>
           <div class="section">
             <p>Observação:</p>
@@ -484,9 +526,9 @@
           </div>
           <div class="section">
             <p>Prot.: Rad:</p>
-            <input type="text" id="protRadArmadura3" placeholder="Valor">
+            <input type="number" max="999" id="protRadArmadura3" placeholder="Valor">
             <p>Prot.: Dano</p>
-            <input type="number" class="bonus" id="protDanoArmadura3" placeholder="Valor">
+            <input type="number" max="999" id="protDanoArmadura3" placeholder="Valor">
           </div>
           <div class="section">
             <p>Observação:</p>
@@ -508,9 +550,9 @@
           </div>
           <div class="section">
             <p>Prot.: Rad:</p>
-            <input type="text" id="protRadArmadura4" placeholder="Valor">
+            <input type="number" max="999" id="protRadArmadura4" placeholder="Valor">
             <p>Prot.: Dano</p>
-            <input type="number" class="bonus" id="protDanoArmadura4" placeholder="Valor">
+            <input type="number" max="999" id="protDanoArmadura4" placeholder="Valor">
           </div>
           <div class="section">
             <p>Observação:</p>
@@ -640,39 +682,39 @@
         <br><hr><br>
         <div class="section">
           <p>.308:</p>
-          <input type="text" class="itemInput" id=".308">
+          <input type="number" min="0" max="9999" class="itemInput" id=".308">
           <p>.32:</p>
-          <input type="text" class="itemInput" id=".32">
+          <input type="number" min="0" max="9999" class="itemInput" id=".32">
         </div>
         <div class="section">
           <p>.44 Magnum:</p>
-          <input type="text" class="itemInput" id=".44">
+          <input type="number" min="0" max="9999" class="itemInput" id=".44">
           <p>10mm:</p>
-          <input type="text" class="itemInput" id="10mm">
+          <input type="number" min="0" max="9999" class="itemInput" id="10mm">
         </div>
         <div class="section">
           <p>Cal.12:</p>
-          <input type="text" class="itemInput" id="cal12">
+          <input type="number" min="0" max="9999" class="itemInput" id="cal12">
           <p>5.56mm:</p>
-          <input type="text" class="itemInput" id="5.56">
+          <input type="number" min="0" max="9999" class="itemInput" id="5.56">
         </div>
         <div class="section">
           <p>Cél. Microfusão:</p>
-          <input type="text" class="itemInput" id="microfusao">
+          <input type="number" min="0" max="9999" class="itemInput" id="microfusao">
           <p>Míssil:</p>
-          <input type="text" class="itemInput" id="missel">
+          <input type="number" min="0" max="9999" class="itemInput" id="missel">
         </div>
         <div class="section">
           <p>Comb. Flamer:</p>
-          <input type="text" class="itemInput" id="flamer">
+          <input type="number" min="0" max="9999" class="itemInput" id="flamer">
           <p>Carga Elétrons:</p>
-          <input type="text" class="itemInput" id="eletrons">
+          <input type="number" min="0" max="9999" class="itemInput" id="eletrons">
         </div>
         <div class="section">
           <p>Cél. Energia:</p>
-          <input type="text" class="itemInput" id="energia">
+          <input type="number" min="0" max="9999" class="itemInput" id="energia">
           <p>Mini Nuke:</p>
-          <input type="text" class="itemInput" id="nuke">
+          <input type="number" min="0" max="9999" class="itemInput" id="nuke">
         </div>
       </div>
       <br><hr><br>
@@ -683,6 +725,9 @@
       <h2 id="h2Skill" onclick="esconderElemento('divSkill')">Skills</h2>
       <br><hr><br>
       <div id="divSkill">
+        <div class="section">
+          <img id="imgSkills" src="img/Toughness_FO3.png">
+        </div>
         <div class="section">
           <p class="skillP">Lady Killer / Viúva Negra</p>
           <input type="checkbox" class="skill" id="ladyViuva">

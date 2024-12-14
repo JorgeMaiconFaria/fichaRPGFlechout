@@ -1,11 +1,27 @@
 document.getElementById("rpgForm").addEventListener("submit", function(event) {
-  event.preventDefault(); // Evita o envio padrão para que possamos salvar os dados
+  event.preventDefault(); 
   saveData();
 });
 
 function saveData() {
   const nomeJogador = document.getElementById("nomeJogador").value;
   const nomePersonagem = document.getElementById("nomePersonagem").value;
+
+  // Combate
+  const combate = {
+    "vidaAtual": document.getElementById("vidaAtual").value,
+    "vidaMaxima": document.getElementById("vidaMaxima").value,
+    "valorRadiacao": document.getElementById("valorRadiacao").value,
+    "pvMaxRadiacao": document.getElementById("pvMaxRadiacao").value,
+    "armaduraTotal": document.getElementById("armaduraTotal").value,
+    "protVenenoTotal": document.getElementById("protVenenoTotal").value,
+    "protRadiacaoTotal": document.getElementById("protRadiacaoTotal").value,
+    "envenenado": document.getElementById("envenenado").checked,
+    "veneno1h": document.getElementById("veneno1h").checked,
+    "veneno8h": document.getElementById("veneno8h").checked,
+    "valorVeneno": document.getElementById("valorVeneno").value
+  }
+
 
   // Atributos
   const nivel = document.getElementById("nivel").value;
@@ -79,6 +95,40 @@ function saveData() {
     armaduras.push(armadura);
   }
 
+  // Itens
+  const itens = [];
+  for (let i = 1; i <= 25; i++) {
+    const item = {
+      descricao: document.getElementById(`item${i}`).value
+    };
+    itens.push(item);
+  }
+
+  const municao = {
+    ".308": document.getElementById(".308").value,
+    ".32": document.getElementById(".32").value,
+    ".44": document.getElementById(".44").value,
+    "10mm": document.getElementById("10mm").value,
+    "cal12": document.getElementById("cal12").value,
+    "5.56": document.getElementById("5.56").value,
+    "microfusao": document.getElementById("microfusao").value,
+    "missel": document.getElementById("missel").value,
+    "flamer": document.getElementById("flamer").value,
+    "eletrons": document.getElementById("eletrons").value,
+    "energia": document.getElementById("energia").value,
+    "nuke": document.getElementById("nuke").value,
+  }
+
+  const skills = {
+    "ladyViuva": document.getElementById("ladyViuva").checked,
+    "garotoPapai": document.getElementById("garotoPapai").checked,
+    "parafusoArma": document.getElementById("parafusoArma").checked,
+    "jogadorLiga": document.getElementById("jogadorLiga").checked,
+    "ladrao": document.getElementById("ladrao").checked,
+    "aprendizRapido": document.getElementById("aprendizRapido").checked,
+    "treinamentoIntenso": document.getElementById("treinamentoIntenso").checked,
+  }
+
   const data = {
     nomeJogador,
     nomePersonagem,
@@ -88,25 +138,17 @@ function saveData() {
     habilidades,
     inventario,
     armas,
-    armaduras
+    armaduras,
+    itens,
+    municao,
+    skills,
+    combate
   };
 
   localStorage.setItem("rpgData", JSON.stringify(data));
   alert("Dados salvos com sucesso!");
   console.log(data);
 }
-
-function esconderElemento(elemento){
-  let id = document.getElementById(elemento.toString())
-  let div = document.getElementById(elemento.toString().replace("div", "h2"))
-  if (id.style.display == "none") {
-      id.style.display = "inline"
-      div.style.color = "#fff"
-  } else {
-    id.style.display = 'none'
-    div.style.color = "#444"
-  }};
-
 
 window.onload = function loadData() {
   const savedData = JSON.parse(localStorage.getItem("rpgData"));
@@ -116,6 +158,13 @@ window.onload = function loadData() {
      document.getElementById("nomeJogador").value = savedData.nomeJogador;
      document.getElementById("nomePersonagem").value = savedData.nomePersonagem;
      document.getElementById("nivel").value = savedData.nivel;
+
+    // Carregar combate
+    const combate = savedData.combate;
+    for (let key in combate) {
+    document.getElementById(key).value = combate[key];
+    document.getElementById(key).checked = combate[key];
+    }
 
     // Carregar atributos
     const atributos = savedData.atributos;
@@ -128,7 +177,6 @@ window.onload = function loadData() {
     for (let key in bonusAtributos) {
       document.getElementById(key).value = bonusAtributos[key];
     }
-    
     
     // Carregar habilidades
     const habilidades = savedData.habilidades;
@@ -169,5 +217,35 @@ window.onload = function loadData() {
       document.getElementById(`quebradaArmadura${i}`).checked = armadura.quebrada;
       document.getElementById(`destruidaArmadura${i}`).checked = armadura.destruida;
     });
+
+    // Carregar itens
+    savedData.itens.forEach((item, index) => {
+      const i = index + 1;
+      document.getElementById(`item${i}`).value = item.descricao
+    });
+
+     // Carregar municões
+     const municao = savedData.municao;
+     for (let key in municao) {
+      document.getElementById(key).value = municao[key];
+    }
+
+     // Carregar skills
+     const skills = savedData.skills;
+     for (let key in skills) {
+      document.getElementById(key).checked = skills[key];
+    }
+  }  
+};
+
+function esconderElemento(elemento){
+  let id = document.getElementById(elemento.toString())
+  let div = document.getElementById(elemento.toString().replace("div", "h2"))
+  if (id.style.display == "none") {
+      id.style.display = "inline"
+      div.style.color = "#fff"
+  } else {
+    id.style.display = 'none'
+    div.style.color = "#444"
   }
 };

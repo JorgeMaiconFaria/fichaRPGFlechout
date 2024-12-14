@@ -43,6 +43,10 @@ h2, h3 {
   margin-bottom: 15px;
 }
 
+.sectionCombate {
+  text-align: center;
+}
+
 label {
   font-weight: bold;
   width: 40%;
@@ -81,8 +85,15 @@ input {
 }
 
 #imgInventario{
-  width: 25%;
-  height: 25%;
+  width: 40%;
+  height: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#imgSkills{
+  width: 50%;
+  height: 50%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -94,6 +105,10 @@ input {
 #nivel {
   width: 20%;
   height: 20%;
+}
+
+.colarADireita {
+  display: flex;
 }
 
 .armasNome {
