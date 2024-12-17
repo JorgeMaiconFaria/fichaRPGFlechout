@@ -19,7 +19,11 @@ function saveData() {
     "envenenado": document.getElementById("envenenado").checked,
     "veneno1h": document.getElementById("veneno1h").checked,
     "veneno8h": document.getElementById("veneno8h").checked,
-    "valorVeneno": document.getElementById("valorVeneno").value
+    "valorVeneno": document.getElementById("valorVeneno").value,
+    "braçoQuebrado": document.getElementById("braçoQuebrado").checked,
+    "pernaQuebrada": document.getElementById("pernaQuebrada").checked,
+    "dependenciaQuimica": document.getElementById("dependenciaQuimica").checked,
+    "dependenciaAlcoolica": document.getElementById("dependenciaAlcoolica").checked
   }
 
 
