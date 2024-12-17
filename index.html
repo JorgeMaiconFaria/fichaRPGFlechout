@@ -36,6 +36,9 @@
       <h2 id="h2Combate" onclick="esconderElemento('divCombate')">Combate</h2>
       <br><hr><br>
       <div id="divCombate">
+      <div class="section">
+        <img id="imgCombate" src="img/Bloody_Mess_FO3.png">
+      </div>
         <div class="sectionCombate"><p>Pontos de Vida</p></div>
         <div class="sectionCombate">
             <input type="number" id="vidaAtual" placeholder="Atual">
@@ -44,19 +47,19 @@
         <br>
         <div class="section">
           <div class="colarADireita"><p>Radiação</p>
-            <input type="number" id="valorRadiacao"></div>
+            <input type="number" min="0" max="99" id="valorRadiacao"></div>
           <div class="colarADireita"><p>PV Max. Radiação</p>
-            <input type="number" id="pvMaxRadiacao"></div>
+            <input type="number" min="0" max="99" id="pvMaxRadiacao"></div>
         </div>
         <div class="section">
           <p>Armadura</p>
-          <input type="number" id="armaduraTotal">
+          <input type="number" min="0" max="99" id="armaduraTotal">
         </div>
         <div class="section">
           <p>Veneno</p>
-          <input type="number" id="protVenenoTotal">
+          <input type="number" min="0" max="99" id="protVenenoTotal">
           <p>Radiação</p>
-          <input type="number" id="protRadiacaoTotal">
+          <input type="number" min="0" max="99" id="protRadiacaoTotal">
         </div>
         <div class="section">
           <p>Envenenado</p>
@@ -64,9 +67,19 @@
         </div>
         <div class="section">
           <p>Valor:</p>
-          <input type="number" id="valorVeneno">
+          <input type="number" min="0" max="99" id="valorVeneno">
           <p>1h</p><input type="checkbox" id="veneno1h">
           <p>8h</p><input type="checkbox" id="veneno8h">
+        </div>
+        <br><hr><br>
+        <div class="section">
+          <p>Braço(s) Quebrado(s)</p><input type="checkbox" id="braçoQuebrado">
+          <p>Perna(s) Quebrada(s)</p><input type="checkbox" id="braçoQuebrado">
+        </div>
+        <div class="section">
+          <p>Dependência Química</p><input type="checkbox" id="braçoQuebrado">
+          <p>Dependência Alcoólica</p><input type="checkbox" id="braçoQuebrado">
+          
         </div>
         <hr><br>
       </div>
@@ -782,8 +795,8 @@
       <button type="submit">Salvar Dados</button>
     </form>
   </div>
-
   <script src="scripts/script.js"></script>
+  <button id="backToTop" onclick="scrollToTop()"> <img id="imgBacktoTop" src="img/finger.png"></button>
 </body>
 
 </html>

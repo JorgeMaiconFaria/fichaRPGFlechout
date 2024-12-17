@@ -249,3 +249,19 @@ function esconderElemento(elemento){
     div.style.color = "#444"
   }
 };
+
+window.onscroll = function () {
+  const backToTopButton = document.getElementById("backToTop");
+  if (document.documentElement.scrollTop > 450) {
+    backToTopButton.style.display = "flex"; 
+  } else {
+    backToTopButton.style.display = "none"; 
+  }
+};
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
