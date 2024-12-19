@@ -38,6 +38,10 @@ h2, h3 {
   color: #fff; /* Cor de destaque */
 }
 
+.verde {
+  color: #93fd8a;
+}
+
 .section {
   display: flex;
   margin-bottom: 15px;

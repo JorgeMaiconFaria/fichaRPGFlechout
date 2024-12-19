@@ -245,9 +245,13 @@ window.onload = function loadData() {
 function esconderElemento(elemento){
   let id = document.getElementById(elemento.toString())
   let div = document.getElementById(elemento.toString().replace("div", "h2"))
-  if (id.style.display == "none") {
+  
+  if (id.style.display == "none" && div.nodeName == "H2") {
       id.style.display = "inline"
       div.style.color = "#fff"
+  } else if (id.style.display == "none" && div.nodeName == "H3"){
+    id.style.display = "inline"
+    div.style.color = "#93fd8a"
   } else {
     id.style.display = 'none'
     div.style.color = "#444"
