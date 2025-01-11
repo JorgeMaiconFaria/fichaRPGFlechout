@@ -11,6 +11,8 @@ function saveData() {
   const combate = {
     "vidaAtual": document.getElementById("vidaAtual").value,
     "vidaMaxima": document.getElementById("vidaMaxima").value,
+    "paAtual": document.getElementById("paAtual").value,
+    "paMaxima": document.getElementById("paMaxima").value,
     "valorRadiacao": document.getElementById("valorRadiacao").value,
     "pvMaxRadiacao": document.getElementById("pvMaxRadiacao").value,
     "armaduraTotal": document.getElementById("armaduraTotal").value,
@@ -44,7 +46,7 @@ function saveData() {
   const sorte = document.getElementById("sorte").value;
   const bonusSorte = document.getElementById("bonusSorte").value;
 
-  // Habilidades e Inventário
+  // Habilidades
   const habilidades = {
     armasCaC: { valor: document.getElementById("armasCaC").value, bonus: document.getElementById("armasCaCBonus").checked },
     explosivos: { valor: document.getElementById("explosivos").value, bonus: document.getElementById("explosivosBonus").checked },
@@ -61,6 +63,7 @@ function saveData() {
     furtividade: { valor: document.getElementById("furtividade").value, bonus: document.getElementById("furtividadeBonus").checked },
   };
 
+  //Inventário
   const inventario = {
     tampas: document.getElementById("tampas").value,
     itensMinusculos: document.getElementById("itensMinusculos").value,
@@ -77,6 +80,8 @@ function saveData() {
       pa: document.getElementById(`paArma${i}`).value,
       atual: document.getElementById(`atualArma${i}`).value,
       municao: document.getElementById(`municaoArma${i}`).value,
+      tipoMunicao: document.getElementById(`tipoMunicaoArma${i}`).value,
+      totalMunicao: document.getElementById(`totalMunicaoArma${i}`).value,
       obs: document.getElementById(`obsArma${i}`).value,
       quebrada: document.getElementById(`quebradaArma${i}`).checked,
       destruida: document.getElementById(`destruidaArma${i}`).checked,
@@ -154,7 +159,7 @@ function saveData() {
   console.log(data);
 }
 
-window.onload = function loadData() {
+function loadData() {
   const savedData = JSON.parse(localStorage.getItem("rpgData"));
   
   if (savedData) {
@@ -204,6 +209,8 @@ window.onload = function loadData() {
       document.getElementById(`critArma${i}`).value = arma.crit;
       document.getElementById(`paArma${i}`).value = arma.pa;
       document.getElementById(`atualArma${i}`).value = arma.atual;
+      document.getElementById(`tipoMunicaoArma${i}`).value = arma.tipoMunicao,
+      document.getElementById(`totalMunicaoArma${i}`).value = arma.totalMunicao,
       document.getElementById(`municaoArma${i}`).value = arma.municao;
       document.getElementById(`obsArma${i}`).value = arma.obs;
       document.getElementById(`quebradaArma${i}`).checked = arma.quebrada;
@@ -242,6 +249,17 @@ window.onload = function loadData() {
   }  
 };
 
+function toggleMenu() {
+  const menuContent = document.getElementById("menuContent");
+  if (menuContent.style.display === "flex") {
+    menuContent.style.display = "none"; // Esconde o menu
+  } else {
+    menuContent.style.display = "flex"; // Mostra o menu
+  }
+}
+
+window.onload = loadData()
+
 function esconderElemento(elemento){
   let id = document.getElementById(elemento.toString())
   let div = document.getElementById(elemento.toString().replace("div", "h2"))
@@ -272,4 +290,62 @@ function scrollToTop() {
     top: 0,
     behavior: "smooth"
   });
+}
+
+function incrementar(campo) {
+  document.getElementById(campo.toString()).value++
+}
+
+function diminuir(campo) {
+  document.getElementById(campo.toString()).value--
+}
+
+function downloadJSON() {
+  // Recupera os dados salvos no localStorage
+  const savedData = localStorage.getItem("rpgData");
+
+  if (savedData) {
+    // Cria um objeto Blob com os dados JSON
+    const blob = new Blob([savedData], { type: "application/json" });
+
+    // Cria um link temporário para download
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "ficha_rpg.json"; // Nome do arquivo de download
+    link.click();
+
+    // Remove o link temporário
+    URL.revokeObjectURL(link.href);
+  } else {
+    alert("Não há dados para baixar!");
+  }
+};
+
+function uploadJSON(input) {
+  const file = input.files[0];
+
+  if (file) {
+    const reader = new FileReader();
+
+    // Lê o conteúdo do arquivo JSON
+    reader.onload = function (e) {
+      try {
+        const data = JSON.parse(e.target.result);
+
+        // Salva os dados no localStorage
+        localStorage.setItem("rpgData", JSON.stringify(data));
+
+        // Recarrega os campos com os novos dados
+        loadData();
+        alert("Ficha carregada com sucesso!");
+      } catch (error) {
+        alert("Erro ao processar o arquivo JSON. Certifique-se de que o arquivo é válido.");
+        console.error(error);
+      }
+    };
+
+    reader.readAsText(file);
+  } else {
+    alert("Nenhum arquivo selecionado.");
+  }
 }

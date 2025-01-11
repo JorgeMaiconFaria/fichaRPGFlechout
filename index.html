@@ -41,8 +41,18 @@
       </div>
         <div class="sectionCombate"><p>Pontos de Vida</p></div>
         <div class="sectionCombate">
+          <button class="btnMunicao" type="button" onclick="incrementar('vidaAtual')">+</button>
             <input type="number" id="vidaAtual" placeholder="Atual">
-            <input type="number" id="vidaMaxima" placeholder="Max">
+            <input type="number" id="vidaMaxima" placeholder="Total">
+          <button class="btnMunicao" type="button" onclick="diminuir('vidaAtual')">-</button>
+        </div>
+        <br>
+        <div class="sectionCombate"><p>Pontos de Ação</p></div>
+        <div class="sectionCombate">
+          <button id="incrementarPa" type="button" onclick="incrementar('paAtual')">+</button>
+            <input type="number" id="paAtual" placeholder="Atual">
+            <input type="number" id="paMaxima" placeholder="Total">
+          <button id="diminuirPa" type="button" onclick="diminuir('paAtual')">-</button>
         </div>
         <br>
         <div class="section">
@@ -51,6 +61,9 @@
           <div class="colarADireita"><p>PV Max. Radiação</p>
             <input type="number" min="0" max="99" id="pvMaxRadiacao"></div>
         </div>
+        <hr class="subDivisao"><br>
+        <h4>Defesa</h4>
+        <br>
         <div class="section">
           <p>Armadura</p>
           <input type="number" min="0" max="99" id="armaduraTotal">
@@ -61,6 +74,9 @@
           <p>Radiação</p>
           <input type="number" min="0" max="99" id="protRadiacaoTotal">
         </div>
+        <br><hr class="subDivisao"><br>
+        <h4>Veneno</h4>
+        <br>
         <div class="section">
           <p>Envenenado</p>
           <input type="checkbox" id="envenenado">
@@ -71,7 +87,9 @@
           <p>1h</p><input type="checkbox" id="veneno1h">
           <p>8h</p><input type="checkbox" id="veneno8h">
         </div>
-        <br><hr><br>
+        <br><hr class="subDivisao"><br>
+        <h4>Status Negativos</h4>
+        <br>
         <div class="section">
           <p>Braço(s) Quebrado(s)</p><input type="checkbox" id="braçoQuebrado">
           <p>Perna(s) Quebrada(s)</p><input type="checkbox" id="pernaQuebrada">
@@ -85,7 +103,6 @@
       </div>
 
 <!-- Atributos -->
-
 
       <h2 id="h2Atributos" onclick="esconderElemento('divAtributos')">Atributos</h2>
       <br><hr><br>
@@ -121,14 +138,12 @@
           <input class="bonus" type="number" min="1" max="10" id="bonusAgilidade">
         </div>
         <div class="section">
-          <label for="sorte">Sorte:</label>
+          <label for="sorte">Sorte(Crit.):</label>
           <input type="number" min="1" max="10" id="sorte" placeholder="Valor">
           <input class="bonus" type="number" min="1" max="10" id="bonusSorte">
         </div>
         <hr><br>
       </div>
-
-
 
 <!-- Habilidades -->
 
@@ -142,7 +157,7 @@
           <input type="number" min="1" max="100" id="armasCaC" placeholder="Valor"  >
           <input type="checkbox" class="bonus" id="armasCaCBonus">
         </div>
-        <hr><br>
+        <hr class="subDivisao"><br>
         <h3>Percepção</h3>
         <br>
         <div class="section">
@@ -160,7 +175,7 @@
           <input type="number" min="0" max="100" id="lockpick" placeholder="Valor"  >
           <input type="checkbox" class="bonus" id="lockpickBonus">
         </div>
-        <hr><br>
+        <hr class="subDivisao"><br>
         <h3>Resistência</h3>
         <br>
         <div class="section">
@@ -173,7 +188,7 @@
           <input type="number" min="1" max="100" id="ataqueDesarmado" placeholder="Valor"  >
           <input type="checkbox" class="bonus" id="ataqueDesarmadoBonus">
         </div>
-        <hr><br>
+        <hr class="subDivisao"><br>
         <h3>Carisma</h3>
         <br>
         <div class="section">
@@ -186,7 +201,7 @@
           <input type="number" min="0" max="100" id="barganha" placeholder="Valor"  >
           <input type="checkbox" class="bonus" id="barganhaBonus">
         </div>
-        <hr><br>
+        <hr class="subDivisao"><br>
         <h3>Inteligência</h3>
         <br>
         <div class="section">
@@ -204,7 +219,7 @@
           <input type="number" min="0" max="100" id="ciencia" placeholder="Valor"  >
           <input type="checkbox" class="bonus" id="cienciaBonus">
         </div>
-        <hr><br>
+        <hr class="subDivisao"><br>
         <h3>Agilidade</h3>
         <br>
         <div class="section">
@@ -253,19 +268,33 @@
           </div>
           <div class="section">
             <p>Dano:</p>
-            <input type="number" min="0" max="999" class="bonus" placeholder="Valor" id="danoArma1">
+            <input type="text" class="bonus" placeholder="Valor" id="danoArma1">
             <p>Crit:</p>
-            <input type="number" min="0" max="999" class="bonus" placeholder="Valor" id="critArma1">
+            <input type="text" class="bonus" placeholder="Valor" id="critArma1">
             <p>PA:</p>
-            <input type="number" min="0" max="99" class="bonus" placeholder="Valor" id="paArma1">
-          </div>
-          <div class="section">
-            <p>Munição:</p>
+            <input type="text" class="bonus" placeholder="Valor" id="paArma1">
+          </div>        
+          <h4>Munição</h4>     
+          <br>
+          <div class="flex-container">
             <p>Atual:</p>
-            <input type="number" min="0" max="9999" class="bonus" placeholder="Valor" id="atualArma1">
-            <p>Total:</p>
-            <input type="number" min="0" max="9999" class="bonus" placeholder="Valor" id="municaoArma1">
+            <input type="number" min="0" max="9999" placeholder="Valor" id="atualArma1">
+            <p>Carregador:</p>
+            <input type="number" min="0" max="9999" placeholder="Valor" id="municaoArma1">
           </div>
+          <br>
+          <div class="flex-container"  style="gap: 50px;">
+            <button class="btnMunicao" type="button" onclick="incrementar('atualArma1')">+</button>
+            <button class="btnMunicao" type="button" onclick="diminuir('atualArma1')">-</button>
+          </div>
+          <br>
+          <div class="flex-container">
+            <p class="tipoMunicao">Tipo:</p>
+            <input type="text" min="0" max="9999" class="flex2" placeholder="Valor" id="tipoMunicaoArma1">
+            <p class="tipoMunicao">Total:</p>
+            <input type="text" min="0" max="9999" class="flex1" placeholder="Valor" id="totalMunicaoArma1">
+          </div>
+          <br>
           <div class="section">
             <p>Observação:</p>
             <textarea class="armaObservacao" id="obsArma1"></textarea>
@@ -276,7 +305,7 @@
             <p>Destruída:</p>
             <input type="checkbox" id="destruidaArma1">
           </div>
-          <hr><br>
+          <hr class="subDivisao"><br>
 
           <!--Arma 2-->
 
@@ -286,19 +315,33 @@
           </div>
           <div class="section">
             <p>Dano:</p>
-            <input type="number" min="0" max="999" class="bonus" placeholder="Valor" id="danoArma2">
+            <input type="text" class="bonus" placeholder="Valor" id="danoArma2">
             <p>Crit:</p>
-            <input type="number" min="0" max="999" class="bonus" placeholder="Valor" id="critArma2">
+            <input type="text" class="bonus" placeholder="Valor" id="critArma2">
             <p>PA:</p>
-            <input type="number" min="0" max="99" class="bonus" placeholder="Valor" id="paArma2">
+            <input type="text" class="bonus" placeholder="Valor" id="paArma2">
           </div>
-          <div class="section">
-            <p>Munição:</p>
+          <h4>Munição</h4>     
+          <br>
+          <div class="flex-container">
             <p>Atual:</p>
-            <input type="number" min="0" max="9999" class="bonus" placeholder="Valor" id="municaoArma2">
-            <p>Total:</p>
-            <input type="number" min="0" max="9999" class="bonus" placeholder="Valor" id="atualArma2">
+            <input type="number" min="0" max="9999" placeholder="Valor" id="atualArma2">
+            <p>Carregador:</p>
+            <input type="number" min="0" max="9999" placeholder="Valor" id="municaoArma2">
           </div>
+          <br>
+          <div class="flex-container"  style="gap: 50px;">
+            <button class="btnMunicao" type="button" onclick="incrementar('atualArma2')">+</button>
+            <button class="btnMunicao" type="button" onclick="diminuir('atualArma2')">-</button>
+          </div>
+          <br>
+          <div class="flex-container">
+            <p class="tipoMunicao">Tipo:</p>
+            <input type="text" min="0" max="9999" class="flex2" placeholder="Valor" id="tipoMunicaoArma2">
+            <p class="tipoMunicao">Total:</p>
+            <input type="text" min="0" max="9999" class="flex1" placeholder="Valor" id="totalMunicaoArma2">
+          </div>
+          <br>
           <div class="section">
             <p>Observação:</p>
             <textarea class="armaObservacao" id="obsArma2"></textarea>
@@ -309,7 +352,7 @@
             <p>Destruída:</p>
             <input type="checkbox" id="destruidaArma2">
           </div>
-          <hr><br>
+          <hr class="subDivisao"><br>
 
           <!--Arma 3-->
           
@@ -319,19 +362,33 @@
           </div>
           <div class="section">
             <p>Dano:</p>
-            <input type="number" min="0" max="999" class="bonus" placeholder="Valor" id="danoArma3">
+            <input type="text" class="bonus" placeholder="Valor" id="danoArma3">
             <p>Crit:</p>
-            <input type="number" min="0" max="999" class="bonus" placeholder="Valor" id="critArma3">
+            <input type="text" class="bonus" placeholder="Valor" id="critArma3">
             <p>PA:</p>
-            <input type="number" min="0" max="99" class="bonus" placeholder="Valor" id="paArma3">
+            <input type="text" class="bonus" placeholder="Valor" id="paArma3">
           </div>
-          <div class="section">
-            <p>Munição:</p>
+          <h4>Munição</h4>     
+          <br>
+          <div class="flex-container">
             <p>Atual:</p>
-            <input type="number" min="0" max="9999" class="bonus" placeholder="Valor" id="municaoArma3">
-            <p>Total:</p>
-            <input type="number" min="0" max="9999" class="bonus" placeholder="Valor" id="atualArma3">
+            <input type="number" min="0" max="9999" placeholder="Valor" id="atualArma3">
+            <p>Carregador:</p>
+            <input type="number" min="0" max="9999" placeholder="Valor" id="municaoArma3">
           </div>
+          <br>
+          <div class="flex-container"  style="gap: 50px;">
+            <button class="btnMunicao" type="button" onclick="incrementar('atualArma3')">+</button>
+            <button class="btnMunicao" type="button" onclick="diminuir('atualArma3')">-</button>
+          </div>
+          <br>
+          <div class="flex-container">
+            <p class="tipoMunicao">Tipo:</p>
+            <input type="text" min="0" max="9999" class="flex2" placeholder="Valor" id="tipoMunicaoArma3">
+            <p class="tipoMunicao">Total:</p>
+            <input type="text" min="0" max="9999" class="flex1" placeholder="Valor" id="totalMunicaoArma3">
+          </div>
+          <br>
           <div class="section">
             <p>Observação:</p>
             <textarea class="armaObservacao" id="obsArma3"></textarea>
@@ -342,7 +399,7 @@
             <p>Destruída:</p>
             <input type="checkbox" id="destruidaArma3">
           </div>
-          <hr><br>
+          <hr class="subDivisao"><br>
 
           <!--Arma 4-->
 
@@ -352,19 +409,33 @@
           </div>
           <div class="section">
             <p>Dano:</p>
-            <input type="number" min="0" max="999" class="bonus" placeholder="Valor" id="danoArma4">
+            <input type="text" class="bonus" placeholder="Valor" id="danoArma4">
             <p>Crit:</p>
-            <input type="number" min="0" max="999" class="bonus" placeholder="Valor" id="critArma4">
+            <input type="text" class="bonus" placeholder="Valor" id="critArma4">
             <p>PA:</p>
-            <input type="number" min="0" max="99" class="bonus" placeholder="Valor" id="paArma4">
+            <input type="text" class="bonus" placeholder="Valor" id="paArma4">
           </div>
-          <div class="section">
-            <p>Munição:</p>
+          <h4>Munição</h4>     
+          <br>
+          <div class="flex-container">
             <p>Atual:</p>
-            <input type="number" min="0" max="9999" class="bonus" placeholder="Valor" id="municaoArma4">
-            <p>Total:</p>
-            <input type="number" min="0" max="9999" class="bonus" placeholder="Valor" id="atualArma4">
+            <input type="number" min="0" max="9999" placeholder="Valor" id="atualArma4">
+            <p>Carregador:</p>
+            <input type="number" min="0" max="9999" placeholder="Valor" id="municaoArma4">
           </div>
+          <br>
+          <div class="flex-container"  style="gap: 50px;">
+            <button class="btnMunicao" type="button" onclick="incrementar('atualArma4')">+</button>
+            <button class="btnMunicao" type="button" onclick="diminuir('atualArma4')">-</button>
+          </div>
+          <br>
+          <div class="flex-container">
+            <p class="tipoMunicao">Tipo:</p>
+            <input type="text" min="0" max="9999" class="flex2" placeholder="Valor" id="tipoMunicaoArma4">
+            <p class="tipoMunicao">Total:</p>
+            <input type="text" min="0" max="9999" class="flex1" placeholder="Valor" id="totalMunicaoArma4">
+          </div>
+          <br>
           <div class="section">
             <p>Observação:</p>
             <textarea class="armaObservacao" id="obsArma4"></textarea>
@@ -375,7 +446,7 @@
             <p>Destruída:</p>
             <input type="checkbox" id="destruidaArma4">
           </div>
-          <hr><br>
+          <hr class="subDivisao"><br>
 
           <!--Arma 5-->
 
@@ -385,19 +456,33 @@
           </div>
           <div class="section">
             <p>Dano:</p>
-            <input type="number" min="0" max="999" class="bonus" placeholder="Valor" id="danoArma5">
+            <input type="text" class="bonus" placeholder="Valor" id="danoArma5">
             <p>Crit:</p>
-            <input type="number" min="0" max="999" class="bonus" placeholder="Valor" id="critArma5">
+            <input type="text" class="bonus" placeholder="Valor" id="critArma5">
             <p>PA:</p>
-            <input type="number" min="0" max="99" class="bonus" placeholder="Valor" id="paArma5">
+            <input type="text" class="bonus" placeholder="Valor" id="paArma5">
           </div>
-          <div class="section">
-            <p>Munição:</p>
+          <h4>Munição</h4>     
+          <br>
+          <div class="flex-container">
             <p>Atual:</p>
-            <input type="number" min="0" max="9999" class="bonus" placeholder="Valor" id="municaoArma5">
-            <p>Total:</p>
-            <input type="number" min="0" max="9999" class="bonus" placeholder="Valor" id="atualArma5">
+            <input type="number" min="0" max="9999" placeholder="Valor" id="atualArma5">
+            <p>Carregador:</p>
+            <input type="number" min="0" max="9999" placeholder="Valor" id="municaoArma5">
           </div>
+          <br>
+          <div class="flex-container"  style="gap: 50px;">
+            <button class="btnMunicao" type="button" onclick="incrementar('atualArma5')">+</button>
+            <button class="btnMunicao" type="button" onclick="diminuir('atualArma5')">-</button>
+          </div>
+          <br>
+          <div class="flex-container">
+            <p class="tipoMunicao">Tipo:</p>
+            <input type="text" min="0" max="9999" class="flex2" placeholder="Valor" id="tipoMunicaoArma5">
+            <p class="tipoMunicao">Total:</p>
+            <input type="text" min="0" max="9999" class="flex1" placeholder="Valor" id="totalMunicaoArma5">
+          </div>
+          <br>
           <div class="section">
             <p>Observação:</p>
             <textarea class="armaObservacao" id="obsArma5"></textarea>
@@ -408,7 +493,7 @@
             <p>Destruída:</p>
             <input type="checkbox" id="destruidaArma5">
           </div>
-          <hr><br>
+          <hr class="subDivisao"><br>
 
           <!--Arma 6-->
 
@@ -418,19 +503,33 @@
           </div>
           <div class="section">
             <p>Dano:</p>
-            <input type="number" min="0" max="999" class="bonus" placeholder="Valor" id="danoArma6">"
+            <input type="text" class="bonus" placeholder="Valor" id="danoArma6">"
             <p>Crit:</p>
-            <input type="number" min="0" max="999" class="bonus" placeholder="Valor" id="critArma6">
+            <input type="text" class="bonus" placeholder="Valor" id="critArma6">
             <p>PA:</p>
-            <input type="number" min="0" max="99" class="bonus" placeholder="Valor" id="paArma6">
+            <input type="text" class="bonus" placeholder="Valor" id="paArma6">
           </div>
-          <div class="section">
-            <p>Munição:</p>
+          <h4>Munição</h4>     
+          <br>
+          <div class="flex-container">
             <p>Atual:</p>
-            <input type="number" min="0" max="9999" class="bonus" placeholder="Valor" id="municaoArma6">
-            <p>Total:</p>
-            <input type="number" min="0" max="9999" class="bonus" placeholder="Valor" id="atualArma6">
+            <input type="number" min="0" max="9999" placeholder="Valor" id="atualArma6">
+            <p>Carregador:</p>
+            <input type="number" min="0" max="9999" placeholder="Valor" id="municaoArma6">
           </div>
+          <br>
+          <div class="flex-container"  style="gap: 50px;">
+            <button class="btnMunicao" type="button" onclick="incrementar('atualArma6')">+</button>
+            <button class="btnMunicao" type="button" onclick="diminuir('atualArma6')">-</button>
+          </div>
+          <br>
+          <div class="flex-container">
+            <p class="tipoMunicao">Tipo:</p>
+            <input type="text" min="0" max="9999" class="flex2" placeholder="Valor" id="tipoMunicaoArma6">
+            <p class="tipoMunicao">Total:</p>
+            <input type="text" min="0" max="9999" class="flex1" placeholder="Valor" id="totalMunicaoArma6">
+          </div>
+          <br>
           <div class="section">
             <p>Observação:</p>
             <textarea class="armaObservacao" id="obsArma6"></textarea>
@@ -441,7 +540,7 @@
             <p>Destruída:</p>
             <input type="checkbox" id="destruidaArma6">
           </div>
-          <hr><br>
+          <hr class="subDivisao"><br>
 
           <!--Arma 7-->
 
@@ -451,19 +550,33 @@
           </div>
           <div class="section">
             <p>Dano:</p>
-            <input type="number" min="0" max="999" class="bonus" placeholder="Valor" id="danoArma7">
+            <input type="text" class="bonus" placeholder="Valor" id="danoArma7">
             <p>Crit:</p>
-            <input type="number" min="0" max="999" class="bonus" placeholder="Valor" id="critArma7">
+            <input type="text" class="bonus" placeholder="Valor" id="critArma7">
             <p>PA:</p>
-            <input type="number" min="0" max="99" class="bonus" placeholder="Valor" id="paArma7">
+            <input type="text" class="bonus" placeholder="Valor" id="paArma7">
           </div>
-          <div class="section">
-            <p>Munição:</p>
+          <h4>Munição</h4>     
+          <br>
+          <div class="flex-container">
             <p>Atual:</p>
-            <input type="number" min="0" max="9999" class="bonus" placeholder="Valor" id="municaoArma7">
-            <p>Total:</p>
-            <input type="number" min="0" max="9999" class="bonus" placeholder="Valor" id="atualArma7">
+            <input type="number" min="0" max="9999" placeholder="Valor" id="atualArma7">
+            <p>Carregador:</p>
+            <input type="number" min="0" max="9999" placeholder="Valor" id="municaoArma7">
           </div>
+          <br>
+          <div class="flex-container"  style="gap: 50px;">
+            <button class="btnMunicao" type="button" onclick="incrementar('atualArma7')">+</button>
+            <button class="btnMunicao" type="button" onclick="diminuir('atualArma7')">-</button>
+          </div>
+          <br>
+          <div class="flex-container">
+            <p class="tipoMunicao">Tipo:</p>
+            <input type="text" min="0" max="9999" class="flex2" placeholder="Valor" id="tipoMunicaoArma7">
+            <p class="tipoMunicao">Total:</p>
+            <input type="text" min="0" max="9999" class="flex1" placeholder="Valor" id="totalMunicaoArma7">
+          </div>
+          <br>
           <div class="section">
             <p>Observação:</p>
             <textarea class="armaObservacao" id="obsArma7"></textarea>
@@ -505,7 +618,7 @@
             <p>Destruída:</p>
             <input type="checkbox" id="destruidaArmadura1">
           </div>
-          <hr><br>
+          <hr class="subDivisao"><br>
 
           <!--Armadura 2-->
 
@@ -529,7 +642,7 @@
             <p>Destruída:</p>
             <input type="checkbox" id="destruidaArmadura2">
           </div>
-          <hr><br>
+          <hr class="subDivisao"><br>
 
           <!--Armadura 3-->
 
@@ -553,7 +666,7 @@
             <p>Destruída:</p>
             <input type="checkbox" id="destruidaArmadura3">
           </div>
-          <hr><br>
+          <hr class="subDivisao"><br>
 
           <!--Armadura 4-->
 
@@ -791,8 +904,16 @@
         <p>Requisitos: Nível 2</p>
         <hr><br>
       </div>
-    
-      <button type="submit">Salvar Dados</button>
+      <div id="menu">
+        <button id="menuToggle" type="button" onclick="toggleMenu()">☰</button>
+        <div id="menuContent">
+          <button id="saveButton" type="button" onclick="downloadJSON()">📥</button>
+          <label for="uploadJson" id="uploadButton">📂</label>
+          <input type="file" id="uploadJson" accept=".json" onchange="uploadJSON(this)" style="display: none;">
+        </div>
+      </div>
+      <button type="submit" id="bntSubmitFlutuante">💾</button>
+      <button id="submit" type="submit">Salvar Dados</button>
     </form>
   </div>
   <script src="scripts/script.js"></script>

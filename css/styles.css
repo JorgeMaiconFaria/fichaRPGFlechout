@@ -28,17 +28,17 @@ body {
   )
 }
 
-h1 {
+h1, h2, h3, h4 {
   text-align: center;
   color: #fff; /* Cor de destaque */
 }
 
-h2, h3 {
-  text-align: center;
-  color: #fff; /* Cor de destaque */
+.subDivisao {
+  border-top: 1px dashed #93fd8a;
+  border-bottom: 1px dashed #93fd8a;
 }
 
-.verde {
+.verde{
   color: #93fd8a;
 }
 
@@ -47,8 +47,26 @@ h2, h3 {
   margin-bottom: 15px;
 }
 
+.flex-container {
+  display: flex; /* Define o contêiner como flexível */
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+  justify-content: center;
+  gap: 10px; /* Espaçamento entre os itens */
+  width: 100%; /* Ocupa toda a largura do contêiner */
+}
+
+.flex2 {
+  flex: 2;
+}
+
+.flex1 {
+  flex: 1;
+}
+
 .sectionCombate {
+  display: flex;
   text-align: center;
+  justify-content: center;
 }
 
 label {
@@ -95,14 +113,7 @@ input {
   margin-right: auto;
 }
 
-#imgSkills{
-  width: 50%;
-  height: 50%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#imgCombate{
+#imgCombate, #imgSkills{
   width: 50%;
   height: 50%;
   margin-left: auto;
@@ -120,6 +131,10 @@ input {
 
 .colarADireita {
   display: flex;
+}
+
+.centralizar {
+  text-align: center;
 }
 
 .armasNome {
@@ -157,7 +172,7 @@ p {
   font-size: 16px;
 }
 
-button {
+#submit {
   display: block;
   width: 100%;
   padding: 10px;
@@ -187,10 +202,86 @@ button {
   z-index: 1000; /* Fica acima dos outros elementos */
 }
 
+#bntSubmitFlutuante {
+  position: fixed;
+  top: 20px; /* Distância do topo */
+  right: 20px; /* Distância da direita */
+  width: 50px; /* Largura do botão */
+  height: 50px; /* Altura do botão */
+  background-color: rgba(40, 167, 69, 0.2); /* Cor de fundo */
+  color: white; /* Cor do ícone */
+  border: none;
+  border-radius: 50%; /* Torna o botão circular */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+  cursor: pointer;
+  z-index: 1000; /* Fica acima de outros elementos */
+  display: flex;
+  justify-content: center; /* Centraliza o ícone horizontalmente */
+  align-items: center; /* Centraliza o ícone verticalmente */
+  font-size: 24px; /* Tamanho do ícone */
+}
+
+#menu {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+#menuToggle {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(40, 167, 69, 0.2);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#menuContent {
+  display: none; /* Inicialmente escondido */
+  margin-top: 10px;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#menuContent button, #menuContent label {
+  width: 50px;
+  height: 50px;
+  background-color: #28a745; /* Cor de fundo para os botões */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+#incrementarVida, #diminuirVida, #incrementarPa, #diminuirPa {
+  width: 50px;
+  height: 40px;
+  border-radius: 60%;
+  background-color: rgba(182, 255, 173, 0.5);
+}
+
+.btnMunicao {
+  width: 50px;
+  height: 40px;
+  border-radius: 60%;
+  background-color: rgba(182, 255, 173, 0.5);
+}
+
 #imgBacktoTop {
   width: 50px;
   height: 50px;
-  border-radius: 40%;
+  border-radius: 50%;
   background-color: white;
 }
-
