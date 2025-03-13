@@ -136,6 +136,11 @@ function saveData() {
     "ladrao": document.getElementById("ladrao").checked,
     "aprendizRapido": document.getElementById("aprendizRapido").checked,
     "treinamentoIntenso": document.getElementById("treinamentoIntenso").checked,
+    "compreensao": document.getElementById("compreensao").checked,
+    "educado": document.getElementById("educado").checked,
+    "entomologista": document.getElementById("entomologista").checked,
+    "canalha": document.getElementById("canalha").checked,
+    "punhoFerro": document.getElementById("punhoFerro").checked,
   }
 
   const data = {
