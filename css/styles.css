@@ -154,6 +154,7 @@ input {
 
 textarea {
   background-color: #dbf3d8;
+  width: 70%;
 }
 
 input[type="checkbox"] {

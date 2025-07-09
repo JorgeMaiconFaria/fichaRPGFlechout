@@ -6,6 +6,7 @@ document.getElementById("rpgForm").addEventListener("submit", function(event) {
 function saveData() {
   const nomeJogador = document.getElementById("nomeJogador").value;
   const nomePersonagem = document.getElementById("nomePersonagem").value;
+  const anotacoes = document.getElementById("anotacoes").value;
 
   // Combate
   const combate = {
@@ -27,7 +28,6 @@ function saveData() {
     "dependenciaQuimica": document.getElementById("dependenciaQuimica").checked,
     "dependenciaAlcoolica": document.getElementById("dependenciaAlcoolica").checked
   }
-
 
   // Atributos
   const nivel = document.getElementById("nivel").value;
@@ -146,6 +146,7 @@ function saveData() {
   const data = {
     nomeJogador,
     nomePersonagem,
+    anotacoes,
     nivel,
     atributos: { forca, agilidade, resistencia, percepcao, carisma, inteligencia, sorte },
     bonusAtributos: { bonusForca, bonusAgilidade, bonusResistencia, bonusPercepcao, bonusCarisma, bonusInteligencia, bonusSorte },
@@ -171,6 +172,7 @@ function loadData() {
      // Carregar nome, personagem, nível
      document.getElementById("nomeJogador").value = savedData.nomeJogador;
      document.getElementById("nomePersonagem").value = savedData.nomePersonagem;
+     document.getElementById("anotacoes").value = savedData.anotacoes;
      document.getElementById("nivel").value = savedData.nivel;
 
     // Carregar combate
@@ -257,9 +259,9 @@ function loadData() {
 function toggleMenu() {
   const menuContent = document.getElementById("menuContent");
   if (menuContent.style.display === "flex") {
-    menuContent.style.display = "none"; // Esconde o menu
+    menuContent.style.display = "none";
   } else {
-    menuContent.style.display = "flex"; // Mostra o menu
+    menuContent.style.display = "flex";
   }
 }
 
